@@ -1,6 +1,6 @@
-import pymsysql
+import pymysql
 import dbconfig
-connection = pymsql.connect(host='localhost', user=dbconfig.db_user, passwd=dbconfig.password)
+connection = pymysql.connect(host='localhost', user=dbconfig.db_user, passwd=dbconfig.db_password)
 
 try:
     with connection.cursor() as cursor:
@@ -16,6 +16,7 @@ description VARCHAR(255),
 updated_at TIMESTAMP,
 PRIMARY KEY (id)
 )"""
-         cursor.execute(sql)
-     connection.commit()
-     connection.close()
+        cursor.execute(sql)
+    connection.commit()
+finally:
+    connection.close()
