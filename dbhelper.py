@@ -32,12 +32,12 @@ class DBHelper:
             connection.close()
 
 
-def clear_all(self):
-    connection = self.connect()
-    try:
-        query = "DELETE FROM crimes;"
-        with connection.cursor() as cursor:
-            cursor.execute(query)
-            connection.commit()
-    finally:
-        connection.close()
+    def clear_all(self):
+        connection = self.connect()
+        try:
+            query = "DELETE FROM crimes;"
+            with connection.cursor() as cursor:
+                cursor.execute(query)
+                connection.commit()
+        finally:
+            connection.close()

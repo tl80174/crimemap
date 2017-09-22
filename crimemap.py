@@ -7,6 +7,7 @@ from flask import request
 app = Flask(__name__)
 DB = DBHelper()
 
+
 @app.route("/")
 def home():
     try:
@@ -25,6 +26,7 @@ def add():
     except Exception as e:
         print e
     return home()
+
 
 @app.route("/clear")
 def clear():
