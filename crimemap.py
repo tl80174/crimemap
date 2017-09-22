@@ -10,14 +10,14 @@ DB = DBHelper()
 @app.route("/")
 def home():
     try:
-        date = DB.get_all_inputs()
+        data = DB.get_all_inputs()
     except Exception as e:
         print e
         data = None
     return render_template("home.html", data=data)
 
 
-@app.route("/add", methdos=["POST"])
+@app.route("/add", methods=["POST"])
 def add():
     try:
         data = request.form.get("userinput")
