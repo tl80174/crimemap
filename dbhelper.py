@@ -34,7 +34,7 @@ class DBHelper:
                     'longitude': crime[1],
                     'date': datetime.datetime.strftime(crime[2], '%Y-%m-%d'),
                     'category': crime[3],
-                    'description': crimte[4]
+                    'description': crime[4]
                 }
                 named_crimes.append(named_crime)
             return named_crimes
